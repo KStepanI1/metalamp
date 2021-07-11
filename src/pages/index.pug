@@ -1,0 +1,17 @@
+include ../assets/pug/layout.pug
+include ../components/header/header.pug
+include ../components/footer/footer.pug
+
+doctype html
+
+block meta
+    title Главная страница
+
+block header
+    +header()
+
+block content
+    p Это контент
+
+block footer
+    +footer()
