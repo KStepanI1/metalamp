@@ -1,7 +1,8 @@
-include ../main-nav/main-nav.pug
-
-doctype html
+include __main-nav/__main-nav
+include __buttons/__buttons
 
 mixin header
-    a: img(src="../assets/images/logo/favicon.ico")
-    +main-nav()
+    header(class="header")
+        a(class="header__logo__link"): img(class="header__logo" src='images/logo/logo.svg')
+        +main-nav()
+        +header__buttons()

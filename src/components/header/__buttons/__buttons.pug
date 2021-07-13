@@ -1,0 +1,8 @@
+include ../../__button/__button
+doctype html
+
+
+mixin header__buttons
+    div(class='header__buttons')
+        div(class='header__button'): +__button_light('Войти')
+        div(class='header__button'): +__button_dark('Зарегистрироваться')

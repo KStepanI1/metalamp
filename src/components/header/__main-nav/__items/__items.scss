@@ -1,0 +1,24 @@
+@import "src/assets/scss/_vars.scss";
+
+.header__main-nav__items {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  float: right;
+  &__item {
+    margin-left: 20px;
+    &__link {
+      display: block;
+      height: 100%;
+      text-align: center;
+      text-decoration: none;
+      color: rgba($main-color, 0.5);
+    }
+  }
+}
+
+.header__main-nav__items__item__link:active {
+  font-weight: bold;
+  color: rgba($main-color, 0.75);
+}
