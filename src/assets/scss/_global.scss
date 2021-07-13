@@ -1,5 +1,15 @@
-body {
-  font-family: "Jost", "Arial", sans-serif;
-  font-size: 16px;
+@import "~normalize.css";
+
+*, *:before, *:after {
   margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+
+html, body {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 16px;
+  height: 100%;
 }
