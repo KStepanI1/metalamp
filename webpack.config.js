@@ -1,12 +1,11 @@
-const path = require('path')
-const HTMLWebpackPlugin = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-const TerserPlugin = require("terser-webpack-plugin")
-const ESLintPlugin = require("eslint-webpack-plugin")
+const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 let pages = ['index']
 const plugins = []
@@ -43,15 +42,17 @@ plugins.push(new CleanWebpackPlugin())
 
 plugins.push(new HtmlWebpackPugPlugin())
 
-plugins.push(new MiniCssExtractPlugin({
-    filename: "[name].[hash].css",
-    chunkFilename: "[id].css",
-    ignoreOrder: false, // Enable to remove warnings about conflicting order
-}))
+if (isProd) {
+    plugins.push(new MiniCssExtractPlugin( {
+        filename: '[name].css',
+        chunkFilename: '[id].css',
+    }))
+}
 
 module.exports = {
     mode: isDev ? 'development' : 'production',
     context: path.resolve(__dirname, 'src'),
+    devtool: isDev ? 'source-map' : false,
     entry: filesToEntry(pages),
     output: {
         filename: "[name].[hash].js",
@@ -116,6 +117,7 @@ module.exports = {
         },
         minimizer: [
             new CssMinimizerPlugin(),
+            new TerserPlugin()
         ],
     },
 }
