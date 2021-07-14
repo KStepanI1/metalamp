@@ -1,6 +1,7 @@
 include ../../assets/pug/layout
 include ../../components/header/header
 include ../../components/footer/footer
+include ../../components/home-page-content/home-page-content
 
 doctype html
 
@@ -11,7 +12,7 @@ block header
     +header()
 
 block content
-    p Это контент
+    +home-page-content()
 
 block footer
     +footer()

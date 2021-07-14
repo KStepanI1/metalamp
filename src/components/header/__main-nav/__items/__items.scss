@@ -15,10 +15,17 @@
       text-decoration: none;
       color: rgba($main-color, 0.5);
     }
+    &_expand {
+      display: flex;
+    }
+    &__expand-more {
+      padding: 3px;
+      cursor: pointer;
+    }
   }
 }
 
-.header__main-nav__items__item__link:active {
+.header__main-nav__items__item__link:focus {
   font-weight: bold;
   color: rgba($main-color, 0.75);
 }

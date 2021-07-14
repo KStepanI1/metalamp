@@ -8,14 +8,21 @@
   line-height: 15px;
   text-transform: uppercase;
   font-weight: bold;
+  cursor: pointer;
   &_dark {
     background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
     color: #ffffff;
+    &:active {
+      opacity: 0.5;
+    }
   }
   &_light {
     padding: 13px 18px;
     background-color: #ffffff;
     border: 2px solid;
     color: $purple;
+    &:active {
+      opacity: 0.5;
+    }
   }
 }

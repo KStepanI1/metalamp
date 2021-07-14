@@ -1,0 +1,1 @@
+import "./home-page-content.scss"
