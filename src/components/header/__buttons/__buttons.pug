@@ -1,8 +1,8 @@
-include ../../default-button/default-button
+include ../../button/button
 doctype html
 
 
 mixin header__buttons
     div(class='header__buttons')
-        div(class='header__button'): +default-button("light", 'Войти')
-        div(class='header__button'): +default-button("dark", 'Зарегистрироваться')
+        div(class='header__button'): +button("light", 'Войти')
+        div(class='header__button'): +button("dark", 'Зарегистрироваться')

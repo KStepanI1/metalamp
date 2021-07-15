@@ -1,0 +1,46 @@
+mixin __main-content
+    -
+        let footer_nav = {
+            nav: {
+                "navigation": {
+                    "Навигация": {
+                        "О нас": '/change-me',
+                        "Новости": '/change-me',
+                        "Служба поддержки": '/change-me',
+                        "Услуги": '/change-me'
+                    },
+                },
+                "about-us": {
+                    "О нас": {
+                        "О сервисе": '/change-me',
+                        "Наша команда": '/change-me',
+                        "Вакансии": '/change-me',
+                        "Инвесторы": '/change-me'
+                    },
+                },
+                "support": {
+                    "Служба поддержки": {
+                        "Соглашения": '/change-me',
+                        "Сообщества": '/change-me',
+                        "Связь с нами": '/change-me'
+                    }
+                },
+            }
+
+        }
+
+    iv(class="footer__main-content")
+        div(class="main-content__info")
+            div(class="info__logo"): img(src="images/logo/logo.svg")
+            p(class="info__description") Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+        each footer_item, footer_key in footer_nav.nav
+            div(class=`main-content__${footer_key}`)
+                each nav_item, nav_key in footer_item
+                    h3= `${nav_key}`
+                    ul.main-content__list
+                        each item_item, item_key in nav_item
+                            li: a(href=`${item_item}`)= `${item_key}`
+        div(class="main-content__subscription")
+            h3 Подписка
+            p(class="subscription__description") Получайте специальные предложения и новости сервиса
+            +subscription-text-field('subscription', 'Email').text-field_subscription

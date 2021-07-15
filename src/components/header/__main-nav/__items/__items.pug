@@ -1,20 +1,26 @@
 
+
+
 mixin __items
-    ul(class="header__main-nav__items")
-        li(class="header__main-nav__items__item"): a(class="header__main-nav__items__item__link" href="/mock-address/change-me") О нас
-        li(class="header__main-nav__items__item")
-            div(class="header__main-nav__items__item_expand")
-                a(class="header__main-nav__items__item__link" href="/mock-address/change-me") Услуги
-                img(class="header__main-nav__items__item__expand-img" src="images/header__expand_more.svg" alt="Развернуть")
-            //div(class='main-nav__items_dropdown')
-            //    button(class="main-nav__items__drop-button") Услуги
-            //    div(class="main-nav__items_dropdown__content")
-            //        a Услуга 1
-            //        a Услуга 2
-            //        a Услуга 3
-        li(class="header__main-nav__items__item"): a(class="header__main-nav__items__item__link" href="/mock-address/change-me") Вакансии
-        li(class="header__main-nav__items__item"): a(class="header__main-nav__items__item__link" href="/mock-address/change-me") Новости
-        li(class="header__main-nav__items__item")
-            div(class="header__main-nav__items__item_expand")
-                a(class="header__main-nav__items__item__link" href="/mock-address/change-me") Соглашения
-                img(class="header__main-nav__items__item__expand-img" src="images/header__expand_more.svg" alt="Развернуть")
+
+    -
+        let nav = {
+            items: {
+                "О нас": false,
+                "Услуги": true,
+                "Вакансии": false,
+                "Новости": false,
+                "Соглашения": true
+            }
+
+        }
+
+    ul(class="main-nav__items")
+        each item_val, item_key in nav.items
+            if item_val === false
+                li(class="main-nav__item"): a(class="item__link" href="/mock-address/change-me")= item_key
+            else
+                li(class="main-nav__item")
+                    div(class="main-nav__item_expand")
+                        a(class="item__link" href="/mock-address/change-me")= item_key
+                        img(class="item__expand-img" src="images/header__expand_more.svg" alt="Развернуть")

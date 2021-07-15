@@ -1,0 +1,12 @@
+mixin __social-content
+    -
+        let socials = ["twitter", "facebook", "instagram"]
+
+    div(class="footer__social-content")
+        p(class="social-content__copyright") Copyright © 2018 Toxin отель. Все права защищены.
+        div(class="social-content__socials")
+            each social in socials
+                a(class="socials__social-link"
+                    href=`${social}.com`): img(class=`social-content__${social}-img`
+                                                src=`images/${social}-logo.svg`
+                                                alt=`Наш ${social}`)

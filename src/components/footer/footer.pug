@@ -1,5 +1,11 @@
+include ../text-field/text-field
+include ./__main-content/__main-content
+include ./__social-content/__social-content
 
 doctype html
 
 mixin footer
-    p Это футер
+    footer(class="footer")
+        +__main-content()
+        +__social-content()
+

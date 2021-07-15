@@ -1,0 +1,28 @@
+@import "../../../assets/scss/vars";
+
+.footer__social-content {
+  border-top: 1px solid rgba($main-color, 0.25);
+  background: #FFFFFF;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  max-width: 1920px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 140px;
+}
+
+.social-content__copyright {
+  margin: 26px 0;
+  line-height: 17px;
+}
+
+.social-content__socials {
+  float: right;
+  height: 22px;
+  margin: 23px 0;
+}
+
+.social-content__twitter-img, .social-content__facebook-img,
+.social-content__instagram-img {
+  padding: 0 10px;
+}

@@ -1,0 +1,50 @@
+@import "../../../assets/scss/vars";
+
+.footer__main-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.9fr 1fr 1.3fr;
+  text-decoration: none;
+  padding: 100px 140px;
+  color: rgba($main-color, 0.5);
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.main-content__subscription {
+  margin-left: 50px;
+}
+
+.main-content__info, .main-content__subscription {
+  max-width: 260px;
+}
+
+.info__description, .subscription__description {
+  margin-top: 21px;
+  line-height: 24px;
+}
+
+.main-content__navigation, .main-content__about-us,
+.main-content__support {
+  margin-left: 40px;
+}
+
+.main-content__list {
+  list-style-type: none;
+  margin-top: 21px;
+  & li {
+    margin-top: 20px;
+    & a {
+      outline: none;
+      text-decoration:none;
+      color:inherit;
+    }
+  }
+}
+
+.text-field__input {
+  margin-top: 20px;
+}
+
+.text-field_subscription {
+  margin-top: 20px;
+}

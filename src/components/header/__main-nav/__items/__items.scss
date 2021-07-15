@@ -1,30 +1,33 @@
 @import "src/assets/scss/_vars.scss";
 
-.header__main-nav__items {
+.main-nav__items {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
   float: right;
-  &__item {
-    margin-left: 20px;
-    &__link {
-      display: block;
-      text-align: center;
-      text-decoration: none;
-      color: rgba($main-color, 0.5);
-    }
-    &_expand {
-      display: flex;
-    }
-    &__expand-img {
-      padding: 3px;
-      cursor: pointer;
-    }
+}
+
+.main-nav__item {
+  margin-left: 20px;
+  &_expand {
+    display: flex;
   }
 }
 
-.header__main-nav__items__item__link:focus {
+.item__link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: rgba($main-color, 0.5);
+}
+
+.item__link:focus {
   font-weight: bold;
   color: rgba($main-color, 0.75);
+}
+
+.item__expand-img {
+  padding: 3px;
+  cursor: pointer;
 }

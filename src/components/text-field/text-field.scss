@@ -1,8 +1,7 @@
 @import "src/assets/scss/vars";
 
-.subscription-text-field__input {
+.text-field__input {
   position: relative;
-  background: #FFFFFF;
   font: inherit;
   outline: none;
   overflow: visible;
@@ -17,11 +16,17 @@
     color: inherit;
     text-overflow: ellipsis;
   }
-  &:hover, :focus {
+  &:hover {
     border: 1px solid rgba($main-color, 0.5);
     color: rgba($main-color, 0.5);
   }
-  background: url("../../assets/images/arrow_forward.svg") no-repeat;
-  background-position: right 12px center;
+  &:focus {
+    border: 1px solid rgba($main-color, 0.5);
+    color: rgba($main-color, 0.5);
+  }
+}
+
+.text-field_subscription {
+  background: url("../../assets/images/arrow_forward.svg") no-repeat right 12px center;
 }
 
