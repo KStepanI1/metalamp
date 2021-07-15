@@ -2,19 +2,46 @@
 
 .footer__main-content {
   display: grid;
-  grid-template-columns: 1.2fr 0.95fr 0.7fr 0.95fr 1.4fr;
+  grid-template-columns: 1.25fr 0.90fr 0.75fr 1.10fr 1.35fr;
   text-decoration: none;
   padding: 100px 140px;
   color: rgba($main-color, 0.5);
   font-size: 14px;
   line-height: 17px;
-}
 
-.main-content__subscription,
-.main-content__navigation,
-.main-content__about-us,
-.main-content__support {
-  margin-left: 60px;
+  .main-content__list {
+    list-style-type: none;
+    margin-top: 21px;
+    .list__element {
+      margin-top: 20px;
+      .list__link {
+        outline: none;
+        text-decoration:none;
+        color:inherit;
+      }
+    }
+  }
+
+  .main-content__info,
+  .main-content__subscription {
+    max-width: 260px;
+  }
+
+  .main-content__subscription {
+    margin-left: 51px;
+  }
+
+  .main-content__navigation, {
+    margin-left: 40px;
+  }
+
+  .main-content__about-us {
+    margin-left: 57px;
+  }
+
+  .main-content__support {
+    margin-left: 92px;
+  }
 }
 
 .info__description, .subscription__description {
@@ -22,23 +49,7 @@
   line-height: 24px;
 }
 
-.main-content__list {
-  list-style-type: none;
-  margin-top: 21px;
-  & li {
-    margin-top: 20px;
-    & a {
-      outline: none;
-      text-decoration:none;
-      color:inherit;
-    }
-  }
-}
-
-.text-field__input {
-  margin-top: 20px;
-}
-
+.text-field__input,
 .text-field_subscription {
   margin-top: 20px;
 }
