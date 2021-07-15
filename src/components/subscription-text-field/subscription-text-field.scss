@@ -1,0 +1,27 @@
+@import "src/assets/scss/vars";
+
+.subscription-text-field__input {
+  position: relative;
+  background: #FFFFFF;
+  font: inherit;
+  outline: none;
+  overflow: visible;
+  border: 1px solid rgba($main-color, 0.25);
+  color: rgba($main-color, 0.25);
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 44px;
+  width: 100%;
+  padding-left: 15px;
+  &::placeholder {
+    color: inherit;
+    text-overflow: ellipsis;
+  }
+  &:hover, :focus {
+    border: 1px solid rgba($main-color, 0.5);
+    color: rgba($main-color, 0.5);
+  }
+  background: url("../../assets/images/arrow_forward.svg") no-repeat;
+  background-position: right 12px center;
+}
+
