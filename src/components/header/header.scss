@@ -1,11 +1,14 @@
 .header {
-  display: flex;
   max-width: 1920px;
   margin-left: auto;
   margin-right: auto;
-  padding: 15px 140px;
   background: #FFFFFF;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+}
+
+.header__container {
+  display: flex;
+  padding: 15px 140px;
 }
 
 .logo__link {

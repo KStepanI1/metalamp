@@ -2,7 +2,7 @@
 
 .footer__main-content {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 0.9fr 1fr 1.3fr;
+  grid-template-columns: 1.2fr 0.95fr 0.7fr 0.95fr 1.4fr;
   text-decoration: none;
   padding: 100px 140px;
   color: rgba($main-color, 0.5);
@@ -10,22 +10,16 @@
   line-height: 17px;
 }
 
-.main-content__subscription {
-  margin-left: 50px;
-}
-
-.main-content__info, .main-content__subscription {
-  max-width: 260px;
+.main-content__subscription,
+.main-content__navigation,
+.main-content__about-us,
+.main-content__support {
+  margin-left: 60px;
 }
 
 .info__description, .subscription__description {
   margin-top: 21px;
   line-height: 24px;
-}
-
-.main-content__navigation, .main-content__about-us,
-.main-content__support {
-  margin-left: 40px;
 }
 
 .main-content__list {
