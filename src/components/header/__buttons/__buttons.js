@@ -1,2 +1,2 @@
-import "@components/__button/__button"
+import "@components/default-button/default-button.js"
 import "@components/header/__buttons/__buttons.scss"

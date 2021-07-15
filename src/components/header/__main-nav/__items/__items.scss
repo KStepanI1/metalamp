@@ -10,7 +10,6 @@
     margin-left: 20px;
     &__link {
       display: block;
-      height: 100%;
       text-align: center;
       text-decoration: none;
       color: rgba($main-color, 0.5);
@@ -18,7 +17,7 @@
     &_expand {
       display: flex;
     }
-    &__expand-more {
+    &__expand-img {
       padding: 3px;
       cursor: pointer;
     }

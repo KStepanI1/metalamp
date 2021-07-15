@@ -7,14 +7,14 @@
   margin: 0 10px;
 }
 
-.__button {
+.default-button {
   height: 34px;
   padding: 10px 15px;
   &_light {
-    width: 87px;
+    min-width: 87px;
     padding: 8px 13px;
   }
   &_dark {
-    width: 196px;
+    min-width: 196px;
   }
 }
