@@ -72,6 +72,13 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(ttf|woff|woff2|eot)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[hash][ext]'
+                }
+            },
+            {
                 test: /\.html$/,
                 type: 'asset/resource',
                 generator: {
