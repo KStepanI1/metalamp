@@ -1,4 +1,10 @@
+// _class - your personal class / classes
+// theme - dark, light, arrow
+// name - text in button
+//
+// and attr for tag 'form' and 'button'
 
-mixin button(theme, name)
-    button(class=`button button_${theme}`)= name
+mixin button(attr={})
+    form(class="button-form")&attributes(attr)
+        button(class=attr._class + ` button button_${attr.theme}`)&attributes(attr)= attr.name
 

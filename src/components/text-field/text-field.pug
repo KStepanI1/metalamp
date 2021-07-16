@@ -1,5 +1,5 @@
+// themes - ['subscription',]
 
-
-mixin subscription-text-field(type, placeholder)
-    form(class=`text-field`)
-        input(type="text" class=`text-field__input text-field_${type}` placeholder=`${placeholder}`)
+mixin subscription-text-field(attr={})
+    form(class=`text-field-form`)&attributes(attr)
+        input(class=attr._class + ` text-field__input text-field_${attr.theme}`)&attributes(attr)

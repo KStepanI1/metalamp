@@ -4,5 +4,5 @@ doctype html
 
 mixin header__buttons
     div(class='header__buttons')
-        div(class='header__button'): +button("light", 'Войти')
-        div(class='header__button'): +button("dark", 'Зарегистрироваться')
+        div(class='header__button'): +button({ _class: 'button__log', theme: 'light', name: 'Войти'})
+        div(class='header__button'): +button({ _class: 'button__reg', theme: 'dark', name: 'Зарегистрироваться'})

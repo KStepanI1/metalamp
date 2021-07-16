@@ -43,4 +43,8 @@ mixin __main-content
         div(class="main-content__subscription")
             h3(class="main-content__title") Подписка
             p(class="subscription__description") Получайте специальные предложения и новости сервиса
-            +subscription-text-field('subscription', 'Email')
+            +subscription-text-field({
+                type: 'text',
+                placeholder: 'Email',
+                theme: 'subscription'
+            })
