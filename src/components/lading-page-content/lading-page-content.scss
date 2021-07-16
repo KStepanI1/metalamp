@@ -1,0 +1,23 @@
+
+.lading-page-content {
+  margin: 0 auto;
+  max-width: 1920px;
+  min-height: 1022px;
+  width: 100%;
+  box-sizing: border-box;
+  background: url("../../assets/images/index-content.jpg") no-repeat center;
+  background-size: cover;
+
+  & :after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  &__container {
+    position: absolute;
+    .room-search {
+      margin: 70px 140px;
+    }
+  }
+}
