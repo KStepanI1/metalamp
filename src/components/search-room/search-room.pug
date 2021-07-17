@@ -1,0 +1,18 @@
+doctype html
+
+include ../button/button
+
+mixin search-room
+    div.search-room
+        h1.search-room__title Найдём номера под ваши пожелания
+        div.search-room__gap
+            div.gap__date-start
+                h3.gap__title прибытие
+                input(type='text' class="datepicker-here" data-position="right top")
+            div.gap__date-end
+                h3.gap__title выезд
+                input(type='text' class="datepicker-here" data-position="right top")
+        div.search-room__dropdown.search-room__guests
+            h3.guests__title гости
+            div
+        +button({ _class: 'search-room__button', theme: 'arrow', type: 'submit', name: 'Подобрать номера'})

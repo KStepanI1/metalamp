@@ -1,0 +1,30 @@
+.search-room {
+  position: relative;
+  max-width: 380px;
+  max-height: 374px;
+  margin: 70px 140px;
+  background-color: #ffffff;
+  padding: 30px;
+  &__title {
+    margin: 10px 0;
+  }
+
+}
+
+.search-room__gap {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  .gap__date-end {
+    margin-left: 20px;
+  }
+}
+
+.datepicker-here {
+  width: 150px;
+  height: 44px;
+}
+
+
+.search-room__button {
+}
