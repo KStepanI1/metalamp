@@ -2,7 +2,7 @@
 
 .footer__main-content {
   display: grid;
-  grid-template-columns: 1.20fr 0.90fr 0.75fr 1.10fr 1.4fr;
+  grid-template-columns: 1.25fr 0.90fr 0.75fr 1.10fr 1.35fr;
   text-decoration: none;
   padding: 100px 140px;
   color: rgba($main-color, 0.5);
@@ -20,6 +20,11 @@
         color:inherit;
       }
     }
+  }
+
+  .main-content__info,
+  .main-content__subscription {
+    max-width: 260px;
   }
 
   .main-content__subscription {
