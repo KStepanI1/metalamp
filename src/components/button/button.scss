@@ -25,4 +25,9 @@
       opacity: 0.5;
     }
   }
+  &_arrow {
+    background-image: url("../../assets/images/arrow_forward_white.svg"), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background-repeat: no-repeat;
+    background-position: right 13px center, 0 0;
+  }
 }
