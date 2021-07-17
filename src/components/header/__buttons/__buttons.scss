@@ -1,20 +1,22 @@
 .header__buttons {
   display: flex;
-  padding-top: 3px;
+  padding: 3px 0;
 }
 
 .header__button {
   margin: 0 10px;
 }
 
-.button {
+.button__reg, .button__log {
   height: 34px;
   padding: 10px 15px;
-  &_light {
-    min-width: 87px;
-    padding: 8px 13px;
-  }
-  &_dark {
-    min-width: 196px;
-  }
+}
+
+.button__reg {
+  min-width: 196px;
+}
+
+.button__log {
+  min-width: 87px;
+  padding: 8px 13px;
 }
