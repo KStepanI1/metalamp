@@ -1,6 +1,7 @@
 include ../text-field/text-field
 include ./__main-content/__main-content
 include ./__social-content/__social-content
+include ./__small-footer/__small-footer
 
 doctype html
 
@@ -8,4 +9,4 @@ mixin footer
     footer(class="footer")
         +__main-content()
         +__social-content()
-
+        +__small-footer()

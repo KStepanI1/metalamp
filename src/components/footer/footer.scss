@@ -7,4 +7,27 @@
   max-width: 1920px;
   background: #FFFFFF;
   box-shadow: 0 1px 0 rgba(31, 32, 65, 0.1);
+
+  &__small-footer {
+    display: none;
+  }
+
+  @media (max-width: 1200px) {
+    .footer__main-content {
+      padding: 70px 50px;
+    }
+
+    .footer__social-content {
+      padding: 0 50px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .footer__main-content, .footer__social-content {
+      display: none;
+    }
+    .footer__small-footer {
+      display: block;
+    }
+  }
 }

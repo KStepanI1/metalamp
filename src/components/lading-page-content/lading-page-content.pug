@@ -4,5 +4,6 @@ doctype html
 
 mixin lading-page-content
     main(class="lading-page-content")
-        div(class="lading-page-content__container")
-            +search-room()
+        +search-room({class: 'lading-page-content__search-room'})
+        div.lading-page-content__description
+            p.description__text Лучшие номера для вашей работы, отдыха и просто вдохновения

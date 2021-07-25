@@ -1,16 +1,134 @@
+@import "src/assets/scss/vars";
+
 .header {
   max-width: 1920px;
   margin-left: auto;
   margin-right: auto;
   background: #FFFFFF;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  .header__container {
+    display: grid;
+    grid-template-columns: 1fr 4.5fr 323px;
+    padding: 15px 140px;
+    align-items: center;
+
+    .header__main-nav {
+      display: flex;
+
+      .main-nav__items {
+        display: flex;
+        float: right;
+      }
+    }
+
+    .logo__link { max-height: 40px; }
+
+    .header__burger { display: none; }
+
+  }
+
+  @media (max-width: 1200px) {
+    .header__container { padding: 15px 50px; }
+  }
+
+  @media (max-width: 1000px) {
+    .header__container {
+      grid-template-columns: 1fr 1fr;
+      .header__main-nav, .header__buttons { display: none; }
+
+      .header__burger {
+        display: block;
+        z-index: 3;
+        margin-left: auto;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .header__container {
+      padding: 10px 30px;
+
+      .logo__link.header__logo { height: 35px; }
+
+      .header__burger {
+        width: 25px;
+        height: 15px;
+      }
+    }
+  }
+
 }
 
-.header__container {
-  display: flex;
-  padding: 15px 140px;
+// menu-burger active styles
+@media (max-width: 1000px) {
+  .header.header__menu_active {
+    width: 100%;
+    transition: all 0.2s ease 0s;
+    z-index: 20;
+    .header__container {
+      grid-template-rows: 40px 4fr 40px;
+      grid-template-areas:
+              "logo menu-burger"
+              "main-nav main-nav"
+              "buttons buttons";
+
+      .header__main-nav {
+        font-size: 16px;
+        display: block;
+        margin: 0;
+        grid-area: main-nav;
+        .main-nav__items {
+          display: block;
+          height: 100%;
+          width: 100%;
+          .main-nav__item {
+            margin: 20px 8px;
+          }
+          .item__link {
+            text-align: left;
+          }
+        }
+      }
+
+      .header__buttons {
+        display: flex;
+        grid-area: buttons;
+        .button__reg, .button__log {
+          color: $purple;
+          background: #ffffff;
+          border: none;
+          outline: none;
+          padding: 0;
+          height: 100%;
+        }
+      }
+
+      .header__main-nav.main-nav__items { display: block; }
+
+      .header__burger {
+        display: block;
+        z-index: 3;
+        grid-area: menu-burger;
+      }
+
+      .header__logo { grid-area: logo; }
+
+      .header__burger:before {
+        transform: rotate(45deg);
+        top: calc(50% - 1px);
+        transition: all 0.3s ease 0s;
+      }
+      .header__burger:after {
+        transform: rotate(-45deg);
+        bottom: calc(50% - 1px);
+        transition: all 0.3s ease 0s;
+      }
+      .header__burger span {
+        display: none;
+        transition: all 0.3s ease 0s;
+      }
+    }
+  }
 }
 
-.logo__link {
-  max-height: 40px;
-}
+

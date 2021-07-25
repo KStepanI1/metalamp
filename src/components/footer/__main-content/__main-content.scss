@@ -2,7 +2,7 @@
 
 .footer__main-content {
   display: grid;
-  grid-template-columns: 1.25fr 0.90fr 0.75fr 1.10fr 1.35fr;
+  grid-template-columns: 1.25fr 0.90fr 0.8fr 1.10fr 1.35fr;
   text-decoration: none;
   padding: 100px 140px;
   color: rgba($main-color, 0.5);
@@ -33,14 +33,29 @@
 
   .main-content__navigation, {
     margin-left: 40px;
+    @media (max-width: 1460px) {
+      margin-left: 20px;
+    }
   }
 
   .main-content__about-us {
     margin-left: 57px;
+    @media (max-width: 1460px) {
+      margin-left: 40px;
+    }
+    @media (max-width: 1300px) {
+      margin-left: 28px;
+    }
   }
 
   .main-content__support {
     margin-left: 92px;
+    @media  (max-width: 1460px){
+      margin-left: 60px;
+    }
+    @media (max-width: 1300px) {
+      margin-left: 35px;
+    }
   }
 }
 
@@ -49,7 +64,6 @@
   line-height: 24px;
 }
 
-.text-field__input,
-.text-field_subscription {
+.footer__text-field {
   margin-top: 20px;
 }

@@ -1,2 +1,2 @@
 import "./lading-page-content.scss"
-import "../search-room/search-room"
+import "../search-room/search-room.js"

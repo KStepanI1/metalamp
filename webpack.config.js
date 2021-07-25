@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
+const webpack = require("webpack");
 
 let pages = ['index']
 const plugins = []
@@ -38,9 +39,20 @@ plugins.push(new CopyWebpackPlugin({
     ],
 }))
 
+plugins.push(new webpack.ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery'
+}))
+
 plugins.push(new CleanWebpackPlugin())
 
-plugins.push(new HtmlWebpackPugPlugin())
+plugins.push(new HtmlWebpackPugPlugin({
+        minify: {
+            collapseWhitespace: isProd,
+            removeComments: isProd
+        }
+    }
+))
 
 if (isProd) {
     plugins.push(new MiniCssExtractPlugin( {
@@ -95,10 +107,6 @@ module.exports = {
                     "postcss-loader",
                     'sass-loader',
                 ],
-            },
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
             },
             {
                 test: /\.pug$/,

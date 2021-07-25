@@ -1,0 +1,15 @@
+doctype html
+
+mixin __small-footer
+    -
+        let socials = ["twitter", "facebook", "instagram"]
+
+    footer.footer__small-footer
+        img.small-footer__logo(alt="Логотип" src="images/logo/logo.svg")
+        p(class="small-footer__copyright") Copyright © 2018 Toxin отель. Все права защищены.
+        div(class="small-footer__socials")
+            each social in socials
+                 a(class="socials__social-link"
+                     href=`${social}.com`): img(class=`small-footer__img small-footer__${social}-img`
+                                                src=`images/${social}-logo.svg`
+                                                alt=`Наш ${social}`)

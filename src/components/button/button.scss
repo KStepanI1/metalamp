@@ -10,22 +10,31 @@
   padding: 15px 20px;
   font-size: 12px;
   line-height: 15px;
-
   color: #ffffff;
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  &_default {
+    color: $purple;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 0;
+    height: 100%;
+  }
+
   &_dark {
     background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
-    &:active {
-      opacity: 0.5;
-    }
   }
+
   &_light {
     padding: 13px 18px;
     background-color: #ffffff;
     border: 2px solid;
     color: $purple;
-    &:active {
-      opacity: 0.5;
-    }
+
   }
   &_arrow {
     background-image: url("../../assets/images/arrow_forward_white.svg"), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);

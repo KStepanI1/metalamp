@@ -1,9 +1,11 @@
 include __main-nav/__main-nav
 include __buttons/__buttons
+include __menu-burger/__menu-burger
 
 mixin header
     header(class="header")
         div(class="header__container")
             a(class="logo__link" href="/"): img(class="header__logo" src='images/logo/logo.svg' alt="Логотип")
-            +main-nav()
+            +header__menu-burger()
+            +header__main-nav()
             +header__buttons()

@@ -1,18 +1,41 @@
 doctype html
 
 include ../button/button
+include ../calendar/calendar
+include ../text-field/text-field
+include ../dropdown/dropdown
 
-mixin search-room
-    div.search-room
+mixin search-room(attr={})
+    div.search-room&attributes(attr)
         h1.search-room__title Найдём номера под ваши пожелания
         div.search-room__gap
             div.gap__date-start
                 h3.gap__title прибытие
-                input(type='text' class="datepicker-here" data-position="right top")
+                +text-field({
+                    _class: 'search-room__date-start',
+                    id: 'date-start',
+                    type: 'text',
+                    theme: 'expand',
+                    placeholder: 'ДД.ММ.ГГГГ'
+                })
             div.gap__date-end
                 h3.gap__title выезд
-                input(type='text' class="datepicker-here" data-position="right top")
-        div.search-room__dropdown.search-room__guests
+                +text-field({
+                    _class: 'search-room__date-end',
+                    id: 'date-end',
+                    type: 'text',
+                    theme: 'expand',
+                    placeholder: 'ДД.ММ.ГГГГ'
+                })
+        +calendar({class: 'search-room__calendar'})
+        div.search-room__guests
             h3.guests__title гости
-            div
-        +button({ _class: 'search-room__button', theme: 'arrow', type: 'submit', name: 'Подобрать номера'})
+            +text-field({
+                _class: 'search-room__dropdown',
+                id: 'guests-field',
+                type: 'text',
+                theme: 'expand',
+                placeholder: 'Сколько гостей'
+            })
+        +dropdown(['взрослые', 'дети', 'младенцы'], {id: 'guests-dropdown'})
+        +button({ class: 'search-room__button', theme: 'arrow', type: 'submit', name: 'Подобрать номера'})

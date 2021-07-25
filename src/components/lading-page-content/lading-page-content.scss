@@ -1,23 +1,40 @@
 
 .lading-page-content {
+  display: grid;
+  grid-template-rows: auto 1fr;
   margin: 0 auto;
   max-width: 1920px;
+  min-width: 320px;
   min-height: 1022px;
-  width: 100%;
-  box-sizing: border-box;
+  padding: 70px 140px 18px;
   background: url("../../assets/images/index-content.jpg") no-repeat center;
   background-size: cover;
+  width: 100%;
 
-  & :after {
-    content: "";
-    display: table;
-    clear: both;
+  &__search-room {
+    position: relative;
   }
 
-  &__container {
-    position: absolute;
-    .room-search {
-      margin: 70px 140px;
+  &__description {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: flex-end;
+    .description__text {
+      text-align: right;
+      max-width: 320px;
     }
+  }
+
+  @media (max-width: 767px) {
+      padding: 70px 0 18px;
+      max-height: 767px;
+      &__search-room {
+        margin: 0 auto;
+      }
+      &__description {
+        padding: 0 30px;
+      }
   }
 }
