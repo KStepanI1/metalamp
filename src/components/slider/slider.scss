@@ -1,0 +1,45 @@
+@import "src/assets/scss/vars";
+
+.noUi-horizontal {
+  height: 6px;
+
+  .noUi-handle {
+    width: 12px;
+    height: 12px;
+    left: 20px;
+    right: 0;
+    top: -4px;
+  }
+}
+
+.noUi-target {
+  background: #FFFFFF;
+  border-radius: 3px;
+  border: 1px solid rgba($main-color, 0.25);
+  box-shadow: none;
+
+  & .noUi-base {
+    & .noUi-connects {
+      & .noUi-connect {
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+      }
+    }
+  }
+}
+
+.noUi-handle {
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  box-shadow: none;
+}
+
+.noUi-handle:before, .noUi-handle:after {
+  content: none;
+  display: none;
+}
+
+
+
+
+

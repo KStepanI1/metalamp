@@ -6,36 +6,40 @@ include ../text-field/text-field
 include ../dropdown/dropdown
 
 mixin search-room(attr={})
-    div.search-room&attributes(attr)
+    div(class='search-room ' +  attr.class)
         h1.search-room__title Найдём номера под ваши пожелания
         div.search-room__gap
             div.gap__date-start
                 h3.gap__title прибытие
                 +text-field({
-                    _class: 'search-room__date-start',
+                    class: 'search-room__date-start',
                     id: 'date-start',
                     type: 'text',
                     theme: 'expand',
-                    placeholder: 'ДД.ММ.ГГГГ'
+                    placeholder: 'ДД.ММ.ГГГГ',
+                    readonly: "readonly"
                 })
             div.gap__date-end
                 h3.gap__title выезд
                 +text-field({
-                    _class: 'search-room__date-end',
+                    class: 'search-room__date-end',
                     id: 'date-end',
                     type: 'text',
                     theme: 'expand',
-                    placeholder: 'ДД.ММ.ГГГГ'
+                    placeholder: 'ДД.ММ.ГГГГ',
+                    readonly: "readonly"
                 })
         +calendar({class: 'search-room__calendar'})
         div.search-room__guests
             h3.guests__title гости
             +text-field({
-                _class: 'search-room__dropdown',
+                class: 'search-room__dropdown',
                 id: 'guests-field',
                 type: 'text',
                 theme: 'expand',
-                placeholder: 'Сколько гостей'
+                placeholder: 'Сколько гостей',
+                readonly: "readonly"
             })
         +dropdown(['взрослые', 'дети', 'младенцы'], {id: 'guests-dropdown'})
-        +button({ class: 'search-room__button', theme: 'arrow', type: 'submit', name: 'Подобрать номера'})
+        +button({ class: 'search-room__button', theme: 'arrow', type: 'submit', name: 'Подобрать номера'},
+                 action= 'search-room-page.html')

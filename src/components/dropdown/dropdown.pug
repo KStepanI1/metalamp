@@ -4,10 +4,10 @@ mixin dropdown(items, attr={})
     div.dropdown&attributes(attr)
         each item in items
             div.dropdown__dropdown-item
-                h3.item__title= item
+                h3.dropdown-item__title= item
                 div.dropdown-item__counter
                     button.dropdown-item__button.dropdown-item__button_inactive(data-direction='minus') -
-                    input.dropdown-item__value(value='0', type='text')
+                    input.dropdown-item__value(value='0', type='text' readonly='readonly')
                     button.dropdown-item__button(data-direction='plus') +
         div.dropdown__buttons
             +button({class: 'dropdown__button_clear', type: 'button', theme: 'default', name: 'Очистить'})

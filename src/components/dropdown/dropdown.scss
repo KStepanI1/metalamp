@@ -6,7 +6,10 @@
   background-color: #ffffff;
   border: 1px solid rgba(31, 32, 65, 0.5);
   box-sizing: border-box;
+  border-radius: 4px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  width: 100%;
+  z-index: 10;
 
   &_show {
     display: block;
@@ -21,6 +24,7 @@
 
     .dropdown-item__title {
       margin-left: 8px;
+      max-width: calc(100% - 100px);
     }
 
     .dropdown-item__button {

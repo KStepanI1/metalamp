@@ -1,18 +1,19 @@
+doctype html
+
 include ../../assets/pug/layout
 include ../../components/header/header
 include ../../components/footer/footer
-include ../../components/landing-page-content/landing-page-content
+include ../../components/search-room-page-content/search-room-page-content
 
-doctype html
 
 block meta
-    title Главная страница
+    title Комната поиска
 
 block header
     +header()
 
 block content
-    +lading-page-content()
+    +search-room-page-content()
 
 block footer
     +footer()

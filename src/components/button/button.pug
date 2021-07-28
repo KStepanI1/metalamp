@@ -4,7 +4,7 @@
 //
 // and attr for tag 'form' and 'button'
 
-mixin button(attr={})
-    form(class="button-form")
-        button(class=attr._class + ` button button_${attr.theme}`)&attributes(attr)= attr.name
+mixin button(attr={}, action)
+    form(class="button-form" action=action)
+        button(class=`button button_${attr.theme}`)&attributes(attr)= attr.name
 

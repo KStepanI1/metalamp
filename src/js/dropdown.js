@@ -1,7 +1,6 @@
 function clearValues() {
     const inputs = document.querySelectorAll('.dropdown-item__value');
-    const textField = document.querySelector('#guests-field')
-    console.log(inputs)
+    const textField = document.querySelector(`#${this.textFieldId}`)
     inputs.forEach(input => {
         input.value = 0;
     })
@@ -10,30 +9,75 @@ function clearValues() {
 }
 
 
-function submitValues() {
-    const dropdown = document.querySelector('.dropdown')
-    const inputs = document.querySelectorAll('.dropdown-item__value');
-    const textField = document.querySelector('#guests-field')
-    let guestsCount = 0;
-    inputs.forEach(input => {
-        guestsCount += +input.value
-    })
+function createSummaryStr(amount, declensionOfNouns = []) {
+    let amountStr = amount.toString();
 
-    if (guestsCount !== 0) {
-        let guestsCountStr = guestsCount.toString()
-        let lastNumPosition = guestsCountStr.length - 1
 
-        if (guestsCountStr[lastNumPosition] === '1') {
-            guestsCountStr += ' гость'
-        } else if (guestsCountStr[lastNumPosition] >= '2' && guestsCountStr[lastNumPosition] <= '4') {
-            guestsCountStr += ' гостя'
+    if (amount !== 0) {
+        const amountStr_lastNum = amountStr[amountStr.length - 1];
+
+        if (amountStr_lastNum === '1' && amountStr[amountStr.length - 2] !== '1') {
+            amountStr += ' ' + declensionOfNouns[0];
+        } else if (+amountStr_lastNum >= 2 && +amountStr_lastNum <= 4 && amountStr[amountStr.length - 2] !== '1') {
+            amountStr += ' ' + declensionOfNouns[1];
         } else {
-            guestsCountStr += ' гостей'
+            amountStr += ' ' + declensionOfNouns[2];
         }
-
-        textField.value = guestsCountStr
-        dropdown.classList.toggle('dropdown_show')
+        return amountStr;
+    } else {
+        return '';
     }
+}
+
+
+function countGuests(dropdownId) {
+    const dropdown = document.getElementById(dropdownId);
+    const dropdownValues = dropdown.querySelectorAll('.dropdown-item__value')
+
+    let guestsAmount = +(dropdownValues[0].value) + +(dropdownValues[1].value);
+    let babiesAmount = +(dropdownValues[2].value);
+
+    const guestsAmountStr = createSummaryStr(guestsAmount, ['гость', 'гостя', 'гостей']);
+    const babiesAmountStr = createSummaryStr(babiesAmount, ['младенец', 'младенца', 'младенцев']);
+
+    return babiesAmountStr === '' ? guestsAmountStr : guestsAmountStr + ', ' + babiesAmountStr
+}
+
+
+function countRoomAmenities(dropdownId) {
+    const dropdown = document.getElementById(dropdownId);
+    const dropdownValues = dropdown.querySelectorAll('.dropdown-item__value');
+
+    const bedroomsAmount = +dropdownValues[0].value;
+    const bedsAmount = +dropdownValues[1].value;
+    const bathroomsAmount = +dropdownValues[2].value;
+
+    let bedroomsAmountStr = createSummaryStr(bedroomsAmount, ['спальня', 'спальни', 'спален']);
+    let bedsAmountStr = createSummaryStr(bedsAmount, ['кровать', 'кровати', 'кроватей']);
+    let bathroomsAmountStr = createSummaryStr(bathroomsAmount, ['ванная', 'ванны', 'ванных']);
+
+    if (bedroomsAmountStr !== '' && (bedsAmountStr !== '' || bathroomsAmountStr !== '')) {
+        bedroomsAmountStr += ', ';
+    }
+    if (bedsAmountStr !== '' && bathroomsAmountStr !== '') {
+        bedsAmountStr += ', ';
+    }
+
+    return bedroomsAmountStr + bedsAmountStr + bathroomsAmountStr
+}
+
+
+function submitValues() {
+    const dropdown = document.getElementById(this.dropdownId);
+    const textField = document.getElementById(this.textFieldId);
+
+    if (this.dropdownType === 'guests') {
+        textField.value = countGuests(this.dropdownId)
+    } else if (this.dropdownType === 'room-amenities') {
+        textField.value = countRoomAmenities(this.dropdownId)
+    }
+
+    dropdown.classList.toggle('dropdown_show')
 }
 
 
@@ -52,9 +96,9 @@ function observeInputsValues(inputElement) {
 }
 
 
-function onActionDropdown() {
-    const buttons = document.querySelectorAll('.dropdown-item__button')
-
+function onActionDropdown(dropdownId, textFieldId, dropdownType) {
+    const dropdown = document.getElementById(dropdownId)
+    const buttons = dropdown.querySelectorAll('.dropdown-item__button')
     buttons.forEach(button => {
         button.addEventListener('click', function () {
             const direction = this.dataset.direction;
@@ -74,11 +118,21 @@ function onActionDropdown() {
         })
     })
 
-    let clearButton = document.querySelector('.dropdown__button_clear')
-    let submitButton = document.querySelector('.dropdown__button_submit')
+    let clearButton = dropdown.querySelector('.dropdown__button_clear')
+    let submitButton = dropdown.querySelector('.dropdown__button_submit')
 
-    clearButton.addEventListener('click', clearValues)
-    submitButton.addEventListener('click', submitValues)
+    clearButton.addEventListener('click',
+        {
+            handleEvent: clearValues,
+            dropdownId: dropdownId,
+            textFieldId: textFieldId
+        })
+    submitButton.addEventListener('click', {
+        handleEvent: submitValues,
+        dropdownId: dropdownId,
+        textFieldId: textFieldId,
+        dropdownType: dropdownType
+    })
 }
 
 export default onActionDropdown

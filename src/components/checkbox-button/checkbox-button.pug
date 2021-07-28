@@ -1,0 +1,9 @@
+doctype html
+
+mixin checkbox-button(attr={})
+    div.checkbox-button(class=attr.class === undefined ? '' : attr.class)
+        input.checkbox-button__input(
+            id=attr.id === undefined ? '' : attr.id
+            type='checkbox'
+            )
+        label.checkbox-button__label(for=attr.id)= attr.title

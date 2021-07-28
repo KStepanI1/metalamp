@@ -1,0 +1,70 @@
+@import "src/assets/scss/vars";
+
+.filter {
+  display: inline-block;
+  position: relative;
+  width: 266px;
+
+  &__subtitle {
+    margin-bottom: 5px;
+  }
+
+  &__date-of-residence {
+    .date-of-residence__calendar {
+      margin-top: 5px;
+    }
+  }
+
+  &__guests {
+    margin-top: 20px;
+  }
+
+  &__price-range {
+    margin-top: 30px;
+    .filter__subtitle {
+      margin-bottom: 0;
+    }
+    .price-range__title-and-range {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 23px;
+
+      .price-range__range {
+        height: 15px;
+        font-size: 12px;
+        color: rgba($main-color, 0.5);
+        line-height: 15px;
+        text-align: right;
+        text-transform: uppercase;
+      }
+    }
+
+    .price-range__description {
+      font-size: 12px;
+      line-height: 14px;
+      color: rgba($main-color, 0.5);
+      margin-top: 13px;
+    }
+  }
+
+  &__house-rules {
+    margin-top: 30px;
+    width: 222px;
+    .house-rules__checkbox {
+      margin-top: 10px;
+    }
+  }
+
+  &__availability {
+    margin-top: 30px;
+    .availability__rich-checkbox {
+      margin-top: 10px;
+    }
+  }
+
+  &__room-amenities {
+    margin-top: 30px;
+  }
+
+}

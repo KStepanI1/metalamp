@@ -1,0 +1,12 @@
+doctype html
+
+
+mixin rich-checkbox-button(attr={})
+    div.rich-checkbox-button(class=attr.class === undefined ? '' : attr.class)
+        input.rich-checkbox-button__input(
+            id=attr.id === undefined ? '' : attr.id
+            type='checkbox'
+        )
+        label.rich-checkbox-button__label(for=attr.id)
+            p.rich-checkbox-button__title= attr.title
+            p.rich-checkbox-button__description= attr.description

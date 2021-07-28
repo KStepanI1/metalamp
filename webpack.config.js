@@ -8,7 +8,7 @@ const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
 const webpack = require("webpack");
 
-let pages = ['index']
+let pages = ['index' ,'search-room-page']
 const plugins = []
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -121,14 +121,7 @@ module.exports = {
     },
     optimization: {
         splitChunks: {
-            cacheGroups: {
-                styles: {
-                    name: "styles",
-                    type: "css/mini-extract",
-                    chunks: "all",
-                    enforce: true,
-                },
-            },
+            chunks: "all"
         },
         minimizer: [
             new CssMinimizerPlugin(),

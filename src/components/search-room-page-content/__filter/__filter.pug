@@ -1,0 +1,69 @@
+doctype html
+
+include ../../text-field/text-field
+include ../../calendar/calendar
+include ../../dropdown/dropdown
+include ../../checkbox-button/checkbox-button
+include ../../slider/slider
+include ../../rich-checkbox-button/rich-checkbox-button.pug
+
+mixin __filter
+    div.filter
+        div.filter__date-of-residence
+            h3.filter__subtitle даты пребывания в отеле
+            +text-field({
+                class: 'date-of-residence__text-field',
+                id: 'date-range',
+                theme: 'expand',
+                type: 'text',
+                placeholder: "ДД.ММ - ДД.ММ",
+                readonly: 'readonly'
+            })
+            +calendar({class: 'date-of-residence__calendar'})
+        div.filter__guests
+            h3.filter__subtitle гости
+            +text-field({
+                class: 'guests__text-field',
+                id: 'guests-field',
+                theme: 'expand',
+                type: 'text',
+                placeholder: "Сколько гостей",
+                readonly: 'readonly'
+            })
+            +dropdown(['взрослые', 'дети', 'младенцы'], {class: 'filter__dropdown', id: 'guests-dropdown'})
+        div.filter__price-range
+            div.price-range__title-and-range
+                h3.filter__subtitle диапазон цены
+                span.price-range__range(id='filter-slider-range')
+            +slider({class: 'price-range__slider', id: 'filter-slider'})
+            p.price-range__description Стоимость за сутки пребывания в номере
+        div.filter__house-rules
+            h3.filter__subtitle правила дома
+            +checkbox-button({class: 'house-rules__checkbox', id: 'checkbox-smoke', title: 'Можно курить'})
+            +checkbox-button({class: 'house-rules__checkbox', id: 'checkbox-pets', title: 'Можно с питомцами'})
+            +checkbox-button({class: 'house-rules__checkbox', id: 'checkbox-invite', title: 'Можно пригласить гостей (до 10 человек)'})
+        div.filter__availability
+            h3.filter__subtitle доступность
+            +rich-checkbox-button({
+                class: 'availability__rich-checkbox',
+                id: 'rich-checkbox-wide-hole',
+                title: 'Широкий коридор',
+                description: 'Ширина коридоров в номере не менее 91 см.'
+            })
+            +rich-checkbox-button({
+                class: 'availability__rich-checkbox',
+                id: 'rich-checkbox-invalid-support',
+                title: 'Помощник для инвалидов',
+                description: 'На 1 этаже вас встретит специалист  и проводит до номера.'
+            })
+        div.filter__room-amenities
+            h3.filter__subtitle удобства номера
+            +text-field({
+                class: 'room-amenities__text-field',
+                id: 'room-amenities-field',
+                theme: 'expand',
+                type: 'text',
+                placeholder: "Какие удобства",
+                readonly: 'readonly'
+            })
+            +dropdown(['спальни', 'кровати', 'ванные комнаты'], {class: 'filter__dropdown', id: 'room-amenities-dropdown'})
