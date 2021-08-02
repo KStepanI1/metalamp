@@ -67,3 +67,14 @@ mixin __filter(attr={})
                 readonly: 'readonly'
             })
             +dropdown(['спальни', 'кровати', 'ванные комнаты'], {class: 'filter__dropdown', id: 'room-amenities-dropdown'})
+        div.filter__additional-amenities
+            div.additional-amenities__title
+                h3.filter__subtitle дополнительные удобства
+                img.additional-amenities_expand(src="images/expand_more.svg" alt='Развернуть' id='additional-amenities-expand')
+            div.additional-amenities__items
+                +checkbox-button({class: 'additional-amenities__checkbox', id: 'checkbox-breakfast', title: 'Завтрак'})
+                +checkbox-button({class: 'additional-amenities__checkbox', id: 'checkbox-desk', title: 'Письменный стол'})
+                +checkbox-button({class: 'additional-amenities__checkbox', id: 'checkbox-baby-chair', title: 'Стул для кормления'})
+                +checkbox-button({class: 'additional-amenities__checkbox', id: 'checkbox-baby-bed', title: 'Кроватка'})
+                +checkbox-button({class: 'additional-amenities__checkbox', id: 'checkbox-tv', title: 'Телевизор'})
+                +checkbox-button({class: 'additional-amenities__checkbox', id: 'checkbox-shampoo', title: 'Шампунь'})

@@ -12,7 +12,7 @@
   height: 44px;
   width: 100%;
   padding-left: 15px;
-  padding-right: 30px;
+  padding-right: 42px;
   &::placeholder {
     color: inherit;
     text-overflow: ellipsis;
@@ -22,13 +22,13 @@
 }
 
 .text-field_subscription {
-  background: url("../../assets/images/arrow_forward_purple.svg") no-repeat right 12px center;
+  background: url("../../assets/images/arrow_forward_purple.svg") no-repeat right 15px center;
   color: rgba($main-color, 0.25);
   &:hover {color: rgba($main-color, 0.5);}
   &:focus {color: rgba($main-color, 0.5);}
 }
 
 .text-field_expand {
-  background: url("../../assets/images/expand_more.svg") no-repeat right 12px center;
+  background: url("../../assets/images/expand_more.svg") no-repeat right 15px center;
   cursor: pointer;
 }

@@ -59,4 +59,13 @@ slider.noUiSlider.on('update', function () {
     updateSliderValues();
 })
 
+
+const additionalAmenitiesExpand = document.getElementById('additional-amenities-expand');
+
+additionalAmenitiesExpand.addEventListener('click', function () {
+    document.querySelector('.additional-amenities__items').classList.toggle('-shown-');
+    additionalAmenitiesExpand.classList.toggle('-active-');
+})
+
+
 export {roomAmenitiesDropdown, guestsDropdown, calendar};

@@ -66,4 +66,44 @@
     margin-top: 30px;
   }
 
+  &__additional-amenities {
+    margin-top: 30px;
+    .additional-amenities__title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 17px;
+      .filter__subtitle {
+        margin: 0;
+      }
+
+      .additional-amenities_expand {
+        padding: 0 16px;
+        margin-left: 13px;
+        cursor: pointer;
+        transition: all 0.2s ease 0s;
+      }
+
+      .additional-amenities_expand.-active- {
+        transform: rotate(180deg);
+      }
+    }
+
+    .additional-amenities__items {
+      display: none;
+      position: relative;
+    }
+
+    .additional-amenities__items.-shown- {
+      display: block;
+    }
+
+    .additional-amenities__checkbox {
+      display: block;
+      width: 100%;
+      margin: 0 0 10px;
+    }
+
+
+
+  }
 }

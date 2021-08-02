@@ -18,9 +18,9 @@
       justify-content: space-between;
       align-items: flex-end;
       border-bottom: rgba($main-color, 0.1) 1px solid;
-
+      height: 38px;
       .info__room-number {
-        font-family: 'Quicksand', 'Montserrat', 'Arial', sans-serif;
+        height: 28px;
         font-weight: bold;
         color: $main-color;
         .room-number__number-sign {
@@ -50,7 +50,8 @@
       }
 
       .info__room-price {
-        float: right;
+        display: flex;
+        align-items: flex-end;
         color: rgba($main-color, 0.5);
         line-height: 129% ;
         .room-price__value {
@@ -79,8 +80,11 @@
   }
 
   &__link {
+    display: flex;
+    justify-content: flex-start;
     outline: none;
     text-decoration: none;
+
   }
 
   &__link:hover {
