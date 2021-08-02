@@ -14,8 +14,18 @@ class Calendar {
 
     setSwitchCalendar() {
         this.fieldsIdArr.forEach(id => {
-            document.getElementById(id).addEventListener('click', {handleEvent: this.toggleCalendar, calendarId: this.calendarId})
+            document.getElementById(id).addEventListener('click', {
+                handleEvent: this.toggleCalendar,
+                calendarId: this.calendarId
+            })
         })
+    }
+
+    setHideCalendarWhenClickOut(e) {
+        const calendar = $(`#${this.calendarId}`);
+        if (calendar.has(e.target).length === 0 && !this.fieldsIdArr.includes(e.target.id) && calendar.hasClass('datepicker-here_show')){
+            calendar.removeClass('datepicker-here_show');
+        }
     }
 }
 

@@ -4,11 +4,11 @@ include ../../text-field/text-field
 include ../../calendar/calendar
 include ../../dropdown/dropdown
 include ../../checkbox-button/checkbox-button
-include ../../slider/slider
+include ../../rangeSlider/rangeSlider
 include ../../rich-checkbox-button/rich-checkbox-button.pug
 
-mixin __filter
-    div.filter
+mixin __filter(attr={})
+    div.filter(class=attr.class === undefined ? '' : attr.class)
         div.filter__date-of-residence
             h3.filter__subtitle даты пребывания в отеле
             +text-field({
@@ -34,8 +34,8 @@ mixin __filter
         div.filter__price-range
             div.price-range__title-and-range
                 h3.filter__subtitle диапазон цены
-                span.price-range__range(id='filter-slider-range')
-            +slider({class: 'price-range__slider', id: 'filter-slider'})
+                span.price-range__range(id='filter-rangeSlider-range')
+            +rangeSlider({class: 'price-range__slider', id: 'filter-rangeSlider'})
             p.price-range__description Стоимость за сутки пребывания в номере
         div.filter__house-rules
             h3.filter__subtitle правила дома

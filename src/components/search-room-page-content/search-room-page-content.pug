@@ -1,8 +1,9 @@
 doctype html
 
 include ./__filter/__filter
+include ./__rooms/__rooms
 
 mixin search-room-page-content
     main.search-room-page-content
         +__filter()
-        div.search-room-page-content__rooms
+        +__rooms()

@@ -1,9 +1,9 @@
 @import "src/assets/scss/vars";
 
 .filter {
-  display: inline-block;
+  display: block;
   position: relative;
-  width: 266px;
+  max-width: 266px;
 
   &__subtitle {
     margin-bottom: 5px;
@@ -50,7 +50,6 @@
 
   &__house-rules {
     margin-top: 30px;
-    width: 222px;
     .house-rules__checkbox {
       margin-top: 10px;
     }

@@ -67,17 +67,14 @@ function countRoomAmenities(dropdownId) {
 }
 
 
-function submitValues() {
-    const dropdown = document.getElementById(this.dropdownId);
-    const textField = document.getElementById(this.textFieldId);
+function updateValues(dropdownId, textFieldId, dropdownType) {
+    const textField = document.getElementById(textFieldId);
 
-    if (this.dropdownType === 'guests') {
-        textField.value = countGuests(this.dropdownId)
-    } else if (this.dropdownType === 'room-amenities') {
-        textField.value = countRoomAmenities(this.dropdownId)
+    if (dropdownType === 'guests') {
+        textField.value = countGuests(dropdownId)
+    } else if (dropdownType === 'room-amenities') {
+        textField.value = countRoomAmenities(dropdownId)
     }
-
-    dropdown.classList.toggle('dropdown_show')
 }
 
 
@@ -97,8 +94,8 @@ function observeInputsValues(inputElement) {
 
 
 function onActionDropdown(dropdownId, textFieldId, dropdownType) {
-    const dropdown = document.getElementById(dropdownId)
-    const buttons = dropdown.querySelectorAll('.dropdown-item__button')
+    const dropdown = document.getElementById(dropdownId);
+    const buttons = dropdown.querySelectorAll('.dropdown-item__button');
     buttons.forEach(button => {
         button.addEventListener('click', function () {
             const direction = this.dataset.direction;
@@ -114,6 +111,17 @@ function onActionDropdown(dropdownId, textFieldId, dropdownType) {
 
             input.value = newValue
 
+            const dropdownValues = dropdown.querySelectorAll('.dropdown-item__value');
+            let amount = +(dropdownValues[0].value) + +(dropdownValues[1].value) + +(dropdownValues[2].value);
+
+            if (amount === 0) {
+                clearButton.classList.add('-hidden-')
+            } else {
+                clearButton.classList.remove('-hidden-')
+            }
+
+            updateValues(dropdownId, textFieldId, dropdownType);
+
             observeInputsValues(input)
         })
     })
@@ -127,11 +135,10 @@ function onActionDropdown(dropdownId, textFieldId, dropdownType) {
             dropdownId: dropdownId,
             textFieldId: textFieldId
         })
-    submitButton.addEventListener('click', {
-        handleEvent: submitValues,
-        dropdownId: dropdownId,
-        textFieldId: textFieldId,
-        dropdownType: dropdownType
+    clearButton.classList.add('-hidden-');
+
+    submitButton.addEventListener('click', function () {
+        dropdown.classList.remove('dropdown_show');
     })
 }
 
