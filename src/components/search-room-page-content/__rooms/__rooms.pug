@@ -1,7 +1,28 @@
 doctype html
 
+include ../../room/room.pug
+
 mixin __rooms(attr={})
+
+    -
+        const opt = [
+            {class: 'search-room-page__room', imgSrc: 'images/rooms-images/room_840.svg' ,roomNumber: '888', isLux: 'true', price: '9 990', reviewsAmount: '145'},
+            {class: 'search-room-page__room', roomNumber: '840', isLux: 'false', price: '9 900', reviewsAmount: '65'},
+            {class: 'search-room-page__room', roomNumber: '980', isLux: 'true', price: '8 500', reviewsAmount: '35'},
+            {class: 'search-room-page__room', roomNumber: '856', isLux: 'false', price: '7 300', reviewsAmount: '19'},
+            {class: 'search-room-page__room', roomNumber: '740', isLux: 'false', price: '6 000', reviewsAmount: '44'},
+            {class: 'search-room-page__room', roomNumber: '982', isLux: 'false', price: '5 800', reviewsAmount: '56'},
+            {class: 'search-room-page__room', roomNumber: '678', isLux: 'false', price: '5 500', reviewsAmount: '45'},
+            {class: 'search-room-page__room', roomNumber: '450', isLux: 'false', price: '5 300', reviewsAmount: '39'},
+            {class: 'search-room-page__room', roomNumber: '350', isLux: 'false', price: '5 000', reviewsAmount: '77'},
+            {class: 'search-room-page__room', roomNumber: '666', isLux: 'false', price: '5 000', reviewsAmount: '25'},
+            {class: 'search-room-page__room', roomNumber: '444', isLux: 'false', price: '5 000', reviewsAmount: '15'},
+            {class: 'search-room-page__room', roomNumber: '352', isLux: 'false', price: '5 000', reviewsAmount: '55'},
+        ]
+
     div.rooms(class=attr.class === undefined ? '' : attr.class)
         h1.rooms__title Номера, которые мы для вас подобрали
-
+        div.rooms__catalog
+            each roomAttr in opt
+                +room(roomAttr)
 

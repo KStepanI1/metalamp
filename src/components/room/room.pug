@@ -1,4 +1,31 @@
 
 
 mixin room(attr={})
-    div.room(class=attr.class === undefined ? '' : attr.class)
+
+    -
+        const roomClass = attr.class ? attr.class : ''
+        const roomLink = attr.roomLink ? attr.roomLink : '/change-me'
+        const roomNumber = attr.roomNumber ? attr.roomNumber : ''
+        const roomImgSrc = attr.imgSrc ? attr.imgSrc : `images/rooms-images/room_${roomNumber}.svg`
+        const roomIsLux = attr.isLux ? attr.isLux : ''
+        const roomPrice = attr.price ? attr.price : ''
+        const roomReviewsAmount = attr.reviewsAmount ? attr.reviewsAmount : ''
+
+
+
+    div.room(class=roomClass)
+        a.room__link(href=roomLink): img.room__img(src=roomImgSrc alt="Фотография номера")
+        div.room__info
+            div.info__number-and-price
+                a.room__link(href=roomLink): div.info__room-number
+                   span.room-number__number-sign= '№ '
+                   spam.room-number__value= roomNumber
+                   span(class=`room__is-lux_${roomIsLux}`) люкс
+                div.info__room-price
+                    span.room-price__value= roomPrice + '₽'
+                    spam.room-price__text= ' в сутки'
+            div.info__room-evaluation
+                div тут звездочки
+                div.info__reviews-amount
+                    span.reviews-amount__value= roomReviewsAmount
+                    span.reviews-amount__text= ' отзывов'

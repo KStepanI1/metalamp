@@ -1,0 +1,89 @@
+@import "src/assets/scss/vars";
+
+.room {
+  display: grid;
+  position: relative;
+  background: #FFFFFF;
+  box-shadow: 0 10px 20px rgba($main-color, 0.05);
+  border-radius: 4px;
+  .room__img {
+    width: 100%;
+  }
+
+  &__info {
+    padding: 20px;
+    .info__number-and-price {
+      padding-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: rgba($main-color, 0.1) 1px solid;
+
+      .info__room-number {
+        font-family: 'Quicksand', 'Montserrat', 'Arial', sans-serif;
+        font-weight: bold;
+        color: $main-color;
+        .room-number__number-sign {
+          font-size: 14px;
+          line-height: 17px;
+        }
+
+        .room-number__value {
+          font-size: 24px;
+          line-height: 30px;
+        }
+      }
+
+      .room__is-lux_false {
+        display: none;
+      }
+
+      .room__is-lux_true {
+        font-family: 'Montserrat', 'Arial', sans-serif;
+        display: inline-block;
+        color: $purple;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        margin-left: 8px;
+      }
+
+      .info__room-price {
+        float: right;
+        color: rgba($main-color, 0.5);
+        line-height: 129% ;
+        .room-price__value {
+          font-weight: bold;
+        }
+        .room-price__text {
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+    }
+
+    .info__room-evaluation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      align-items: center;
+      .info__reviews-amount {
+        line-height: 18px;
+        color: rgba($main-color, 0.5);
+        .reviews-amount__value {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  &__link {
+    outline: none;
+    text-decoration: none;
+  }
+
+  &__link:hover {
+    opacity: 0.85;
+  }
+}
