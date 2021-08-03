@@ -20,7 +20,7 @@
       border-bottom: rgba($main-color, 0.1) 1px solid;
       height: 38px;
       .info__room-number {
-        height: 28px;
+        height: 24px;
         font-weight: bold;
         color: $main-color;
         .room-number__number-sign {
@@ -29,16 +29,12 @@
         }
 
         .room-number__value {
-          font-size: 24px;
-          line-height: 30px;
+          font-size: 19px;
+          line-height: 23px;
         }
       }
 
-      .room__is-lux_false {
-        display: none;
-      }
-
-      .room__is-lux_true {
+      .room__is-lux{
         font-family: 'Montserrat', 'Arial', sans-serif;
         display: inline-block;
         color: $purple;
@@ -69,6 +65,11 @@
       justify-content: space-between;
       margin-top: 8px;
       align-items: center;
+
+      .room__rate-button {
+        opacity: 1;
+      }
+
       .info__reviews-amount {
         line-height: 18px;
         color: rgba($main-color, 0.5);

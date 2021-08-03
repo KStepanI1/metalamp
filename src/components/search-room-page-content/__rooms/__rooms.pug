@@ -6,18 +6,18 @@ mixin __rooms(attr={})
 
     -
         const opt = [
-            {class: 'search-room-page__room', imgSrc: 'images/rooms-images/room_840.svg' ,roomNumber: '888', isLux: 'true', price: '9 990', reviewsAmount: '145'},
-            {class: 'search-room-page__room', roomNumber: '840', isLux: 'false', price: '9 900', reviewsAmount: '65'},
-            {class: 'search-room-page__room', roomNumber: '980', isLux: 'true', price: '8 500', reviewsAmount: '35'},
-            {class: 'search-room-page__room', roomNumber: '856', isLux: 'false', price: '7 300', reviewsAmount: '19'},
-            {class: 'search-room-page__room', roomNumber: '740', isLux: 'false', price: '6 000', reviewsAmount: '44'},
-            {class: 'search-room-page__room', roomNumber: '982', isLux: 'false', price: '5 800', reviewsAmount: '56'},
-            {class: 'search-room-page__room', roomNumber: '678', isLux: 'false', price: '5 500', reviewsAmount: '45'},
-            {class: 'search-room-page__room', roomNumber: '450', isLux: 'false', price: '5 300', reviewsAmount: '39'},
-            {class: 'search-room-page__room', roomNumber: '350', isLux: 'false', price: '5 000', reviewsAmount: '77'},
-            {class: 'search-room-page__room', roomNumber: '666', isLux: 'false', price: '5 000', reviewsAmount: '25'},
-            {class: 'search-room-page__room', roomNumber: '444', isLux: 'false', price: '5 000', reviewsAmount: '15'},
-            {class: 'search-room-page__room', roomNumber: '352', isLux: 'false', price: '5 000', reviewsAmount: '55'},
+            {class: 'search-room-page__room', roomNumber: '888', isLux: true, price: '9 990', reviewsAmount: '145', rateIsStatic: true, starsValue: 5},
+            {class: 'search-room-page__room', roomNumber: '840', isLux: false, price: '9 900', reviewsAmount: '65', rateIsStatic: true, starsValue: 4},
+            {class: 'search-room-page__room', roomNumber: '980', isLux: true, price: '8 500', reviewsAmount: '35', rateIsStatic: true, starsValue: 3},
+            {class: 'search-room-page__room', roomNumber: '856', isLux: false, price: '7 300', reviewsAmount: '19', rateIsStatic: true, starsValue: 5},
+            {class: 'search-room-page__room', roomNumber: '740', isLux: false, price: '6 000', reviewsAmount: '44', rateIsStatic: true, starsValue: 4},
+            {class: 'search-room-page__room', roomNumber: '982', isLux: false, price: '5 800', reviewsAmount: '56', rateIsStatic: true, starsValue: 3},
+            {class: 'search-room-page__room', roomNumber: '678', isLux: false, price: '5 500', reviewsAmount: '45', rateIsStatic: true, starsValue: 5},
+            {class: 'search-room-page__room', roomNumber: '450', isLux: false, price: '5 300', reviewsAmount: '39', rateIsStatic: true, starsValue: 4},
+            {class: 'search-room-page__room', roomNumber: '350', isLux: false, price: '5 000', reviewsAmount: '77', rateIsStatic: true, starsValue: 3},
+            {class: 'search-room-page__room', roomNumber: '666', isLux: false, price: '5 000', reviewsAmount: '25', rateIsStatic: true, starsValue: 5},
+            {class: 'search-room-page__room', roomNumber: '444', isLux: false, price: '5 000', reviewsAmount: '15', rateIsStatic: true, starsValue: 4},
+            {class: 'search-room-page__room', roomNumber: '352', isLux: false, price: '5 000', reviewsAmount: '55', rateIsStatic: true, starsValue: 3},
         ]
 
     div.rooms(class=attr.class === undefined ? '' : attr.class)

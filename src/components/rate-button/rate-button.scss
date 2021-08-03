@@ -1,0 +1,39 @@
+.rate-button {
+  display: inline-block;
+  overflow: hidden;
+  transform: scale(-1, 1);
+  height: 24px;
+  &__input {
+    appearance: none;
+    position: absolute;
+  }
+
+  &__label,
+  &__label_inactive,
+  &__label_active {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background-image: url("../../assets/images/rate_star_empty.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__label_inactive,
+  &__label_active {
+    cursor: default;
+  }
+
+  &__label_active {
+    background-image: url("../../assets/images/rate_star_full.svg");
+  }
+
+  &__input:checked ~ &__label,
+  &__label:hover,
+  &__label:hover ~ &__label {
+    background-image: url("../../assets/images/rate_star_full.svg");
+  }
+
+}

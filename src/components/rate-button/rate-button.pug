@@ -1,0 +1,30 @@
+mixin rate-button(attr={})
+
+    -
+        const rateClass = attr.class ? attr.class : ''
+        const rateIsStatic = attr.isStatic
+        let rateStarsValue = attr.value ? attr.value : 3
+        let cpyRateStarsValue = 5;
+
+
+    div.rate-button(class=rateClass)
+        if (rateIsStatic === true)
+            while (cpyRateStarsValue > rateStarsValue)
+                input.rate-button__input(type="radio" id=`star-${cpyRateStarsValue}` name="rating" value=`${cpyRateStarsValue}`)
+                label.rate-button__label_inactive(for=`star-${cpyRateStarsValue}` title=`Оценка «${cpyRateStarsValue}»`)
+                - cpyRateStarsValue--
+            while (cpyRateStarsValue > 0)
+                input.rate-button__input(type="radio" id=`star-${cpyRateStarsValue}` name="rating" value=`${cpyRateStarsValue}`)
+                label.rate-button__label_active(for=`star-${cpyRateStarsValue}` title=`Оценка «${cpyRateStarsValue}»`)
+                - cpyRateStarsValue--
+        else
+            input.rate-button__input(type="radio" id="star-5" name="rating" value="5")
+            label.rate-button__label(for="star-5" title="Оценка «5»")
+            input.rate-button__input(type="radio" id="star-4" name="rating" value="4")
+            label.rate-button__label(for="star-4" title="Оценка «4»" )
+            input.rate-button__input(type="radio" id="star-3" name="rating" value="3")
+            label.rate-button__label(for="star-3" title="Оценка «3»" )
+            input.rate-button__input(type="radio" id="star-2" name="rating" value="2")
+            label.rate-button__label(for="star-2" title="Оценка «2»")
+            input.rate-button__input(type="radio" id="star-1" name="rating" value="1")
+            label.rate-button__label(for="star-1" title="Оценка «1»")
