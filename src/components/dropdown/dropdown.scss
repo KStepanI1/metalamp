@@ -14,6 +14,7 @@
   &_show {
     display: block;
     position: absolute;
+    animation: dropdown-content 0.2s ease-in 0s;
   }
 
   &__dropdown-item {
@@ -21,7 +22,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 7px;
-
+    animation: dropdown-content 0.2s ease-in 0s;
     .dropdown-item__title {
       margin-left: 8px;
       max-width: calc(100% - 100px);
@@ -59,10 +60,22 @@
     display: flex;
     justify-content: space-between;
     margin: 13px 7px;
-
+    animation: dropdown-content 0.2s ease-in 0s;
     .-hidden- {
       display: none;
       opacity: 0;
     }
+  }
+}
+
+
+
+
+@keyframes dropdown-content {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

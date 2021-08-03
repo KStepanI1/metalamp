@@ -68,6 +68,7 @@
 
   &__additional-amenities {
     margin-top: 30px;
+
     .additional-amenities__title {
       display: flex;
       align-items: center;
@@ -91,6 +92,7 @@
     .additional-amenities__items {
       display: none;
       position: relative;
+      animation: additional-amenities 0.2s ease-in 0s;
     }
 
     .additional-amenities__items.-shown- {
@@ -105,5 +107,15 @@
 
 
 
+  }
+}
+
+
+@keyframes additional-amenities {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

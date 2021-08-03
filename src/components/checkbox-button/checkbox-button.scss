@@ -48,6 +48,10 @@
     z-index: 2;
   }
 
+  &__label:hover {
+    color: rgba($main-color, 0.75);
+  }
+
   &__input:checked + .checkbox-button__label:after{
     opacity: 1;
   }

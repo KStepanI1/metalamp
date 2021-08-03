@@ -5,7 +5,7 @@
   box-sizing: border-box;
   font-family: inherit;
   width: 100%;
-
+  animation: calendar-content 0.2s ease-in 0s;
   &--content {
     padding: 0;
   }
@@ -13,6 +13,16 @@
   &--cell {
     color: rgba($main-color, 0.5);
     font-size: 12px;
+  }
+
+  &--cell-day {
+    height: auto;
+  }
+
+  &--cell-day:after {
+    content: "";
+    padding-top: 100%;
+    display: block;
   }
 
   &--nav {
@@ -128,5 +138,14 @@
     display: block;
     opacity: 1;
     z-index: 21;
+  }
+}
+
+@keyframes calendar-content {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

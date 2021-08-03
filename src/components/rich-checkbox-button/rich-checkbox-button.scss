@@ -23,7 +23,7 @@
     width: 20px;
     height: 20px;
     background-color: #ffffff;
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    border: 1px solid rgba($main-color, 0.25);
     border-radius: 4px;
 
     position: absolute;
@@ -49,6 +49,14 @@
     z-index: 2;
   }
 
+  &__label:hover {
+    color: rgba($main-color, 0.75);
+  }
+
+  &__label:hover > &__title {
+    color: $main-color;
+  }
+
   &__input:checked + .rich-checkbox-button__label:after{
     opacity: 1;
   }
@@ -61,4 +69,5 @@
     margin-top: 1px;
     margin-bottom: 5px;
   }
+
 }

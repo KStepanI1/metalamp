@@ -1,5 +1,7 @@
 
 
+include ../rate-button/rate-button
+
 mixin room(attr={})
 
     -
@@ -25,7 +27,7 @@ mixin room(attr={})
                     span.room-price__value= roomPrice + '₽'
                     spam.room-price__text= ' в сутки'
             div.info__room-evaluation
-                div тут звездочки
+                +rate-button()
                 div.info__reviews-amount
                     span.reviews-amount__value= roomReviewsAmount
                     span.reviews-amount__text= ' отзывов'
