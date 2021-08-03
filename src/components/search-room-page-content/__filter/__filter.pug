@@ -4,7 +4,7 @@ include ../../text-field/text-field
 include ../../calendar/calendar
 include ../../dropdown/dropdown
 include ../../checkbox-button/checkbox-button
-include ../../rangeSlider/rangeSlider
+include ../../range-slider/range-slider
 include ../../rich-checkbox-button/rich-checkbox-button.pug
 
 mixin __filter(attr={})
@@ -34,8 +34,8 @@ mixin __filter(attr={})
         div.filter__price-range
             div.price-range__title-and-range
                 h3.filter__subtitle диапазон цены
-                span.price-range__range(id='filter-rangeSlider-range')
-            +rangeSlider({class: 'price-range__slider', id: 'filter-rangeSlider'})
+                span.price-range__range(id='filter-range-slider-range')
+            +rangeSlider({class: 'price-range__slider', id: 'filter-range-slider'})
             p.price-range__description Стоимость за сутки пребывания в номере
         div.filter__house-rules
             h3.filter__subtitle правила дома

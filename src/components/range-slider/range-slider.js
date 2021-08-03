@@ -1,2 +1,2 @@
 import "../../js/rangeSlider.js"
-import "./rangeSlider.scss"
+import "./range-slider.scss"

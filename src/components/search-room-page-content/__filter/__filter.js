@@ -3,7 +3,7 @@ import "./__filter.scss"
 import "../../dropdown/dropdown.js"
 import "../../text-field/text-field.js"
 import "../../checkbox-button/checkbox-button.js"
-import "../../rangeSlider/rangeSlider.js"
+import "../../range-slider/range-slider.js"
 import "../../rich-checkbox-button/rich-checkbox-button.js"
 
 import createCalendar from "../../../js/calendar";
@@ -44,8 +44,8 @@ submit.addEventListener('click', (e) => {
     calendar.toggleCalendar();
 })
 
-const slider = document.getElementById('filter-rangeSlider');
-const sliderRangeSpan = document.getElementById('filter-rangeSlider-range');
+const slider = document.getElementById('filter-range-slider');
+const sliderRangeSpan = document.getElementById('filter-range-slider-range');
 
 function updateSliderValues() {
     const currentValues = slider.noUiSlider.get();
