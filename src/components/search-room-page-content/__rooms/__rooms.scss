@@ -1,5 +1,6 @@
 
 .rooms {
+  box-sizing: border-box;
   margin-left: 60px;
   width: 100%;
   display: flex;
@@ -11,7 +12,7 @@
 
   &__catalog {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(270px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(270px,1fr));
     justify-items: center;
     column-gap: 12px;
     row-gap: 20px;

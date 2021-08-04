@@ -5,7 +5,6 @@ $(document).ready(function () {
     $('.carousel-slider').slick({
         arrows: true,
         dots: true,
-        draggable: false,
-        swipe: false
+        draggable: false
     })
 })

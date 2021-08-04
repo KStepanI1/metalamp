@@ -5,5 +5,5 @@ include ./__rooms/__rooms
 
 mixin search-room-page-content
     main.search-room-page-content
-        +__filter()
-        +__rooms()
+        +__filter({class: 'search-room-page-content__filter'})
+        +__rooms({class: 'search-room-page-content__rooms'})

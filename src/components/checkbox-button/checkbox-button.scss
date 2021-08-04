@@ -11,8 +11,9 @@
   &__label {
     padding-left: 30px;
     color: rgba($main-color, 0.5);
-    line-height: 18px;
+    line-height: 129%;
     cursor: pointer;
+    max-width: 222px;
   }
 
   &__label:before {
