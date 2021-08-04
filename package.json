@@ -17,6 +17,7 @@
     "webpack-cli": "^4.7.2"
   },
   "devDependencies": {
+    "slick-carousel": "git+https://github.com/kenwheeler/slick.git",
     "nouislider": "^15.2.0",
     "pug": "^3.0.2",
     "webpack-dev-server": "^3.11.2",

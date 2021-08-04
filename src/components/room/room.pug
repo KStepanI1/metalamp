@@ -1,6 +1,7 @@
 
 
 include ../rate-button/rate-button
+include ../carousel-slider/carousel-slider
 
 mixin room(attr={})
 
@@ -17,7 +18,8 @@ mixin room(attr={})
 
 
     div.room(class=roomClass)
-        a.room__link(href=roomLink): img.room__img(src=roomImgSrc alt="Фотография номера")
+        +carousel-slider({roomNumber: roomNumber,
+                            images: [`room_${roomNumber}`, `room_${roomNumber}`, `room_${roomNumber}`, `room_${roomNumber}`]})
         div.room__info
             div.info__number-and-price
                 a.room__link(href=roomLink): div.info__room-number
