@@ -5,7 +5,8 @@
   box-sizing: border-box;
   font-family: inherit;
   width: 100%;
-  animation: calendar-content 0.2s ease-in 0s;
+  transition: height 0.2s ease-in 0s;
+
   &--content {
     padding: 0;
   }
@@ -100,9 +101,23 @@
     color: #ffffff;
   }
 
+  .-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 50%;
+    color: #ffffff;
+  }
+
 
   .-range-to-, .-range-from- {
     border: none;
+  }
+
+  .datepicker--cell.-range-from-.-range-to- {
+    border-radius: 50%;
+  }
+
+  .datepicker--cell.-range-from-.-range-to-:before {
+    content: none;
   }
 
   .-range-to-:before {
@@ -113,7 +128,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-image: linear-gradient(180deg,#bc9cff,#8ba4f9);
+    background-image: linear-gradient(180deg, #bc9cff, #8ba4f9);
     opacity: .25;
   }
 
@@ -125,27 +140,21 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-image: linear-gradient(180deg,#bc9cff,#8ba4f9);
+    background-image: linear-gradient(180deg, #bc9cff, #8ba4f9);
     opacity: .25;
   }
+
 }
 
 .datepicker-here {
-  display: none;
-
-  &_show {
-    position: absolute;
-    display: block;
-    opacity: 1;
-    z-index: 21;
-  }
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
 }
 
-@keyframes calendar-content {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.calendar_opened {
+  visibility: visible;
+  opacity: 1;
+  z-index: 21;
+  transition: all 0.2s ease-in 0s;
 }

@@ -98,6 +98,10 @@ module.exports = {
                 },
             },
             {
+                test: /\.html$/i,
+                use: ['extract-loader', 'html-loader'],
+            },
+            {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
                     isDev ? 'style-loader' : {
@@ -114,7 +118,10 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif|svg|ico)$/,
-                use: 'file-loader'
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[hash][ext]'
+                }
             },
         ]
 

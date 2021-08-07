@@ -7,7 +7,7 @@ import {calendar, guestsDropdown, roomAmenitiesDropdown} from "../../components/
 
 
 $(document).mouseup(function (e) {
-    calendar.setHideCalendarWhenClickOut(e);
-    guestsDropdown.setHideDropdownWhenClickOut(e);
-    roomAmenitiesDropdown.setHideDropdownWhenClickOut(e);
+    calendar.hideIfClickOut(e);
+    guestsDropdown.hideIfClickOut(e);
+    roomAmenitiesDropdown.hideIfClickOut(e);
 })

@@ -6,9 +6,9 @@
   .noUi-handle {
     width: 12px;
     height: 12px;
-    left: 20px;
+    top: calc(50% - 4px);
     right: 0;
-    top: -4px;
+    left: calc(100% - 2.5px);
   }
 }
 

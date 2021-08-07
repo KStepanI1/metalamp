@@ -10,5 +10,5 @@ mixin dropdown(items, attr={})
                     input.dropdown-item__value(value='0', type='text' readonly='readonly')
                     button.dropdown-item__button(data-direction='plus') +
         div.dropdown__buttons
-            +button({class: 'dropdown__button_clear', type: 'button', theme: 'default', name: 'Очистить'})
+            +button({class: 'dropdown__button_clear -hidden-', type: 'button', theme: 'default', name: 'Очистить'})
             +button({class: 'dropdown__button_submit',type: 'button', theme: 'default', name: 'Применить'})

@@ -5,6 +5,6 @@ import "@components/footer/footer.js"
 import {calendar, dropdown} from "../../components/search-room/search-room.js";
 
 $(document).mouseup(function (e) {
-    calendar.setHideCalendarWhenClickOut(e);
-    dropdown.setHideDropdownWhenClickOut(e);
+    calendar.hideIfClickOut(e);
+    dropdown.hideIfClickOut(e);
 })

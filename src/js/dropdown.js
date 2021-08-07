@@ -93,7 +93,7 @@ function observeInputsValues(inputElement) {
 }
 
 
-function onActionDropdown(dropdownId, textFieldId, dropdownType) {
+function addDropdownListeners(dropdownId, textFieldId, dropdownType) {
     const dropdown = document.getElementById(dropdownId);
     const buttons = dropdown.querySelectorAll('.dropdown-item__button');
     buttons.forEach(button => {
@@ -116,12 +116,11 @@ function onActionDropdown(dropdownId, textFieldId, dropdownType) {
 
             if (amount === 0) {
                 clearButton.classList.add('-hidden-')
-            } else {
+            } else if (clearButton.classList.contains('-hidden-')) {
                 clearButton.classList.remove('-hidden-')
             }
 
             updateValues(dropdownId, textFieldId, dropdownType);
-
             observeInputsValues(input)
         })
     })
@@ -135,11 +134,10 @@ function onActionDropdown(dropdownId, textFieldId, dropdownType) {
             dropdownId: dropdownId,
             textFieldId: textFieldId
         })
-    clearButton.classList.add('-hidden-');
 
     submitButton.addEventListener('click', function () {
-        dropdown.classList.remove('dropdown_show');
+        dropdown.classList.remove('dropdown_opened');
     })
 }
 
-export default onActionDropdown
+export default addDropdownListeners

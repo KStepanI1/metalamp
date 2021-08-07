@@ -1,30 +1,34 @@
 import "./dropdown.scss"
-import onActionDropdown from "../../js/dropdown";
+import addDropdownListeners from "../../js/dropdown";
 
 class Dropdown {
+
     constructor(textFieldId, dropdownId, dropdownType) {
         this.textFieldId = textFieldId;
         this.dropdownId = dropdownId;
         this.dropdownType = dropdownType;
-        onActionDropdown(dropdownId, textFieldId, dropdownType);
+        this.dropdownBlock = document.getElementById(dropdownId);
+        this.textFieldBlock = document.getElementById(textFieldId);
+        addDropdownListeners(dropdownId, textFieldId, dropdownType);
+        this.setSwitch();
     }
 
-    toggleDropdown() {
-        document.getElementById(this.dropdownId).classList.toggle(`dropdown_show`)
+    toggle() {
+        this.dropdownBlock.classList.toggle(`dropdown_opened`)
     }
 
-    setDropdown() {
-        document.getElementById(this.textFieldId).addEventListener('click',
+    setSwitch() {
+        this.textFieldBlock.addEventListener('click',
             {
-                handleEvent: this.toggleDropdown,
-                dropdownId: this.dropdownId
+                handleEvent: this.toggle,
+                dropdownBlock: this.dropdownBlock
             })
     }
 
-    setHideDropdownWhenClickOut(e) {
+    hideIfClickOut(e) {
         const dropdown = $(`#${this.dropdownId}`);
-        if (dropdown.has(e.target).length === 0 && this.textFieldId !== e.target.id && dropdown.hasClass('dropdown_show')){
-            dropdown.removeClass('dropdown_show');
+        if (dropdown.has(e.target).length === 0 && this.textFieldId !== e.target.id && dropdown.hasClass('dropdown_opened')){
+            dropdown.removeClass('dropdown_opened');
         }
     }
 

@@ -118,12 +118,12 @@
       .header__logo { grid-area: logo; }
 
       .header__burger:before {
-        transform: rotate(45deg);
+        transform: rotate(-45deg);
         top: calc(50% - 1px);
         transition: all 0.3s ease 0s;
       }
       .header__burger:after {
-        transform: rotate(-45deg);
+        transform: rotate(45deg);
         bottom: calc(50% - 1px);
         transition: all 0.3s ease 0s;
       }
